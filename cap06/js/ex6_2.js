@@ -46,6 +46,6 @@ frm.addEventListener("submit", (e) => {
     frm.inNumero.focus() // Posiciona curso neste campo
 })
 
-frm.btNovo.addEventListener("click" () => {
+frm.btNovo.addEventListener("click", () => {
     location.reload() // Recarrega a página
 })
