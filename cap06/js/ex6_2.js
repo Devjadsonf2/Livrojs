@@ -48,4 +48,4 @@ frm.addEventListener("submit", (e) => {
 
 frm.btNovo.addEventListener("click", () => {
     location.reload() // Recarrega a página
-})
+})                                                                                                              
