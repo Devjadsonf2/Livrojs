@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="img/livrojs.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>ex7_3</title>
+</head>
+<body>
+    <h1>Programa Inverte Palavra</h1>
+    <script>
+        const palavra = prompt("Palavra: ") // Lê a palavra
+        const tam = palavra.length // Obtém o tamanho
+
+        // Inverso inicia com a última letra da palavra em caixa alta
+        let inverso = palavra.charAt(tam - 1).toUpperCase()
+
+        // For decrescente percorre as demais letras e ...
+        for (let i = tam - 2; i >= 0; i--) {
+            inverso += palavra.charAt(i).toLowerCase()
+            // converte-as em caixa baixa
+        }
+
+        // Exibe palavra original e invertida
+        alert (`Palavra: ${palavra}\nIvertida: ${inverso}`)
+    </script>
+</body>
+</html>
