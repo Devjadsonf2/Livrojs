@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/livrojs.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Exemplo 8.3</title>
+</head>
+<body>
+    <h1>Função com uso dos parâmetros Rest</h1>
+    <script>
+        const calcularMedia = (...notas) => {
+            const num = notas.length // notas é um array
+            if (num == 0) {
+                console.log("Informe, no mínimo, uma nota")
+                return
+            }
+            let soma = 0 // vai acumular a soma das notas
+            for (const nota of notas) {
+                soma += nota // soma o valor dos argumentos
+            }
+            const media = soma / num // calcula a media
+            console.log (`Média: ${media.toFixed(1)}`)
+         }
+         // exemplos de chamada de calcularMedia() com nº de parâmetros diferentes
+         calcularMedia(6, 7, 8) // Média: 7.0
+         calcularMedia(7.5, 10, 8, 9.5) // Média: 8.8
+         calcularMedia() // Informe, no mínimo, uma nota
+    </script>
+</body>
+</html>
