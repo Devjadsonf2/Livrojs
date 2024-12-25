@@ -1,11 +1,31 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const port = 3000
 
 app.get('/', (req, res) => {
-    res.send('Olá Mundo!')
-})
+    res.send('Olá... Bem-Vindo!');
+});
 
-app.listen(port, () => {
-    console.log('Servidor rodando na porta 3000')
+app.get('/cap12', (req, res) =>{
+    res.send('<h2>Capítulo 12: Introdução ao Express</h2>');
+});
+
+// para reconhecer os dados recebidos como sendo um objeto no formato JSON
+app.use('/filmes', (req, res) => {
+    //const titulo = req.body.titulo;
+    //const genero = req.body.genero;
+    const { titulo, genero} = req.body;
+    res.send(`Filme: ${titulo} - Gênero: ${genero}, recebido...`)
+});
+
+// Exemplo de Middleware
+const log = (req, res, next) => {
+    console.log(`...............Acessando em ${new Date()}`);
+}
+
+app.get('/transfere', log, (req, res) => {
+    res.send("Ok! Valor transferido com sucesso...")
 })
+app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`)
+});
